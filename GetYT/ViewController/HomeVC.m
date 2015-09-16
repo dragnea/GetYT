@@ -7,6 +7,7 @@
 //
 
 #import "HomeVC.h"
+#import "PlayerVC.h"
 
 @interface HomeVC ()
 
@@ -16,7 +17,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self presentViewController:[[PlayerVC alloc] init] animated:YES completion:nil];
 }
 
 @end

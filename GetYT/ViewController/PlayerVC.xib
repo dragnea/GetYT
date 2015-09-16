@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9046" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9035"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlayerVC">
+            <connections>
+                <outlet property="tableView" destination="znx-5h-exM" id="E7Q-WO-cWq"/>
+                <outlet property="view" destination="iN0-l3-epB" id="cQs-DL-O6N"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="znx-5h-exM">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <inset key="scrollIndicatorInsets" minX="0.0" minY="100" maxX="0.0" maxY="0.0"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="dlj-Wd-eTc"/>
+                        <outlet property="delegate" destination="-1" id="o4x-uM-bJu"/>
+                    </connections>
+                </tableView>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LC6-Jv-a2r">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zdB-4H-hfh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nG4-kf-uUu">
+                                <rect key="frame" x="8" y="33" width="155" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </view>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="9xL-Q8-rXX"/>
+                    </constraints>
+                    <blurEffect style="light"/>
+                </visualEffectView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="znx-5h-exM" secondAttribute="bottom" id="MEe-Er-cA1"/>
+                <constraint firstItem="znx-5h-exM" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Tna-pe-UkP"/>
+                <constraint firstAttribute="trailing" secondItem="LC6-Jv-a2r" secondAttribute="trailing" id="U1V-JY-IA4"/>
+                <constraint firstItem="LC6-Jv-a2r" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="h5G-wK-7dS"/>
+                <constraint firstAttribute="trailing" secondItem="znx-5h-exM" secondAttribute="trailing" id="seI-6u-3EX"/>
+                <constraint firstItem="znx-5h-exM" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="tlU-06-YdA"/>
+                <constraint firstItem="LC6-Jv-a2r" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yJ5-wq-Heo"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <point key="canvasLocation" x="461.5" y="444.5"/>
+        </view>
+    </objects>
+</document>
