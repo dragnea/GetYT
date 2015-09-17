@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		64448DE61BAAA22500837462 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64448DE51BAAA22500837462 /* PlayerController.m */; };
 		64F949AE1BA9A851002CFAFA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F949AD1BA9A851002CFAFA /* main.m */; };
 		64F949B11BA9A851002CFAFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F949B01BA9A851002CFAFA /* AppDelegate.m */; };
 		64F949BA1BA9A851002CFAFA /* GetYT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 64F949B81BA9A851002CFAFA /* GetYT.xcdatamodeld */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		64448DE41BAAA22500837462 /* PlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerController.h; path = Controller/PlayerController.h; sourceTree = "<group>"; };
+		64448DE51BAAA22500837462 /* PlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerController.m; path = Controller/PlayerController.m; sourceTree = "<group>"; };
 		64F949A91BA9A851002CFAFA /* GetYT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetYT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F949AD1BA9A851002CFAFA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		64F949AF1BA9A851002CFAFA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -102,6 +105,8 @@
 			children = (
 				64F949C91BA9A918002CFAFA /* CoreDataController.h */,
 				64F949CA1BA9A918002CFAFA /* CoreDataController.m */,
+				64448DE41BAAA22500837462 /* PlayerController.h */,
+				64448DE51BAAA22500837462 /* PlayerController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -222,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64F949DD1BA9B2CE002CFAFA /* Song.m in Sources */,
+				64448DE61BAAA22500837462 /* PlayerController.m in Sources */,
 				64F949B11BA9A851002CFAFA /* AppDelegate.m in Sources */,
 				64F949AE1BA9A851002CFAFA /* main.m in Sources */,
 				64F949DE1BA9B2CE002CFAFA /* Song+CoreDataProperties.m in Sources */,
@@ -369,6 +375,7 @@
 				64F949C51BA9A851002CFAFA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

@@ -7,6 +7,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlayerVC">
             <connections>
+                <outlet property="nextButton" destination="qNv-Qi-IzC" id="T63-th-Eft"/>
+                <outlet property="playPauseButton" destination="20Z-TL-LQ7" id="hMM-HJ-rp7"/>
+                <outlet property="previousButton" destination="6WE-qP-GjR" id="OML-R8-K0v"/>
+                <outlet property="stopButton" destination="Cd5-Q0-iQ2" id="K05-ro-a36"/>
                 <outlet property="tableView" destination="znx-5h-exM" id="E7Q-WO-cWq"/>
                 <outlet property="view" destination="iN0-l3-epB" id="cQs-DL-O6N"/>
             </connections>
@@ -31,13 +35,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nG4-kf-uUu">
-                                <rect key="frame" x="8" y="33" width="155" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nG4-kf-uUu">
+                                <rect key="frame" x="8" y="22" width="359" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="hXj-dS-qhK"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20Z-TL-LQ7">
+                                <rect key="frame" x="23" y="62" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="playPauseButtonTouched:" destination="-1" eventType="touchUpInside" id="OCQ-VL-ZkY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cd5-Q0-iQ2">
+                                <rect key="frame" x="85" y="62" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="stopButtonTouched:" destination="-1" eventType="touchUpInside" id="e93-No-A1j"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6WE-qP-GjR">
+                                <rect key="frame" x="145" y="62" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="previousButtonTouched:" destination="-1" eventType="touchUpInside" id="DQ7-gR-Cow"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNv-Qi-IzC">
+                                <rect key="frame" x="199" y="62" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="nextButtonTouched:" destination="-1" eventType="touchUpInside" id="kwp-6Z-CMS"/>
+                                </connections>
+                            </button>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="nG4-kf-uUu" firstAttribute="leading" secondItem="zdB-4H-hfh" secondAttribute="leading" constant="8" id="VLD-mD-sf0"/>
+                            <constraint firstItem="nG4-kf-uUu" firstAttribute="top" secondItem="zdB-4H-hfh" secondAttribute="top" constant="22" id="ZQg-xw-22W"/>
+                            <constraint firstAttribute="trailing" secondItem="nG4-kf-uUu" secondAttribute="trailing" constant="8" id="h4L-kH-XOg"/>
+                        </constraints>
                     </view>
                     <constraints>
                         <constraint firstAttribute="height" constant="100" id="9xL-Q8-rXX"/>

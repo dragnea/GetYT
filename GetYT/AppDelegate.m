@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "CoreDataController.h"
+#import "PlayerController.h"
 #import "HomeVC.h"
 
 @interface AppDelegate ()
@@ -19,7 +20,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    // init Core Data
+    [PlayerController sharedInstance];
     [CoreDataController sharedInstance];
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     _window.rootViewController = [[HomeVC alloc] init];

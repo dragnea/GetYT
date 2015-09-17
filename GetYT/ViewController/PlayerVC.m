@@ -7,10 +7,14 @@
 //
 
 #import "PlayerVC.h"
+#import "PlayerController.h"
 
-@interface PlayerVC ()<UITableViewDataSource, UITableViewDelegate>
+@interface PlayerVC ()<UITableViewDataSource, UITableViewDelegate, PlayerControllerDelegate>
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
-
+@property (nonatomic, weak) IBOutlet UIButton *playPauseButton;
+@property (nonatomic, weak) IBOutlet UIButton *stopButton;
+@property (nonatomic, weak) IBOutlet UIButton *previousButton;
+@property (nonatomic, weak) IBOutlet UIButton *nextButton;
 
 @end
 
@@ -21,22 +25,48 @@
     [super viewDidLoad];
     
     self.tableView.contentInset = UIEdgeInsetsMake(100.0, 0.0, 0.0, 0.0);
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [[UIApplication sharedApplication] beginReceivingRemoteControlEvents];
+    [self becomeFirstResponder];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [[UIApplication sharedApplication] endReceivingRemoteControlEvents];
+    [self resignFirstResponder];
+    [super viewWillDisappear:animated];
+}
+
+- (BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (IBAction)playPauseButtonTouched:(id)sender {
+    [[PlayerController sharedInstance] playOrPause];
+}
+
+- (IBAction)stopButtonTouched:(id)sender {
+    [[PlayerController sharedInstance] stop];
+}
+
+- (IBAction)previousButtonTouched:(id)sender {
+    [[PlayerController sharedInstance] previous];
+}
+
+- (IBAction)nextButtonTouched:(id)sender {
+    [[PlayerController sharedInstance] next];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return 0;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 30;
+    return [PlayerController sharedInstance].songs.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -44,17 +74,13 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
     }
-    cell.textLabel.text = @"test";
+    cell.textLabel.text = @"...";
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCellEditingStyleNone;
 }
-*/
 
 /*
 // Override to support editing the table view.
@@ -68,28 +94,21 @@
 }
 */
 
-/*
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
 
-/*
+}
+
 // Override to support conditional rearranging of the table view.
 - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the item to be re-orderable.
     return YES;
 }
-*/
 
-/*
-#pragma mark - Navigation
+#pragma mark - PlayerControllerDelegate
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)playerControllerStatusChanged:(PlayerController *)playerController {
+    
 }
-*/
 
 @end

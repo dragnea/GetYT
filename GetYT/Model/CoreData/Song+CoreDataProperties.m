@@ -14,5 +14,6 @@
 @implementation Song (CoreDataProperties)
 
 @dynamic url;
+@dynamic index;
 
 @end
