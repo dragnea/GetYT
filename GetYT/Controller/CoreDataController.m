@@ -84,6 +84,24 @@
     return _managedObjectContext;
 }
 
+- (NSArray *)fetchModelClass:(Class)modelClass withPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray<NSSortDescriptor *> *)sortDescriptors {
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:NSStringFromClass(modelClass) inManagedObjectContext:self.managedObjectContext];
+    fetchRequest.entity = entity;
+
+    // Specify criteria for filtering which objects to fetch
+    fetchRequest.predicate = predicate;
+    // Specify how the fetched objects should be sorted
+    fetchRequest.sortDescriptors = sortDescriptors;
+    
+    NSError *error = nil;
+    NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    if (error != nil) {
+        NSLog(@"Error fetching: %@", error.localizedDescription);
+    }
+    return fetchedObjects;
+}
+
 #pragma mark - Core Data Saving support
 
 - (void)saveContext {

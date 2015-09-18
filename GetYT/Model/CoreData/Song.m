@@ -10,6 +10,8 @@
 
 @implementation Song
 
-// Insert code here to add functionality to your managed object subclass
+- (BOOL)fileExists {
+    return !(!self.url || self.url.length == 0 || ![[NSFileManager defaultManager] fileExistsAtPath:self.url]);
+}
 
 @end

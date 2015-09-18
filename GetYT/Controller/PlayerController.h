@@ -26,7 +26,7 @@ typedef NS_OPTIONS(NSInteger, PlayerPlayMode) {
 
 @interface PlayerController : NSObject
 
-@property (nonatomic, strong, readonly) NSArray *songs;
+@property (nonatomic, strong, readonly) NSArray<Song *> *songs;
 @property (nonatomic, strong, readonly) Song *playingSong;
 @property (nonatomic, readonly) PlayerStatus playStatus;
 @property (nonatomic) PlayerPlayMode playMode;
@@ -38,11 +38,14 @@ typedef NS_OPTIONS(NSInteger, PlayerPlayMode) {
 - (void)playOrPause;
 - (void)stop;
 - (void)playSong:(Song *)song;
+- (void)moveSongFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
+- (void)removeSong:(Song *)song;
 
 @end
 
 @protocol PlayerControllerDelegate <NSObject>
 
 - (void)playerControllerStatusChanged:(PlayerController *)playerController;
+- (void)playerController:(PlayerController *)playerController secondsPlayed:(int)secondsPlayed secondsDuration:(int)secondsDuration;
 
 @end

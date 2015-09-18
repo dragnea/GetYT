@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		64448DE61BAAA22500837462 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64448DE51BAAA22500837462 /* PlayerController.m */; };
+		64448DE81BABDCBB00837462 /* Imany vs Filatov & Karas - Don't be so shy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 64448DE71BABDCBB00837462 /* Imany vs Filatov & Karas - Don't be so shy.mp3 */; };
 		64F949AE1BA9A851002CFAFA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F949AD1BA9A851002CFAFA /* main.m */; };
 		64F949B11BA9A851002CFAFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F949B01BA9A851002CFAFA /* AppDelegate.m */; };
 		64F949BA1BA9A851002CFAFA /* GetYT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 64F949B81BA9A851002CFAFA /* GetYT.xcdatamodeld */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		64448DE41BAAA22500837462 /* PlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerController.h; path = Controller/PlayerController.h; sourceTree = "<group>"; };
 		64448DE51BAAA22500837462 /* PlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerController.m; path = Controller/PlayerController.m; sourceTree = "<group>"; };
+		64448DE71BABDCBB00837462 /* Imany vs Filatov & Karas - Don't be so shy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Imany vs Filatov & Karas - Don't be so shy.mp3"; sourceTree = "<group>"; };
 		64F949A91BA9A851002CFAFA /* GetYT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetYT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F949AD1BA9A851002CFAFA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		64F949AF1BA9A851002CFAFA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				64F949AF1BA9A851002CFAFA /* AppDelegate.h */,
 				64F949B01BA9A851002CFAFA /* AppDelegate.m */,
 				64F949BB1BA9A851002CFAFA /* Assets.xcassets */,
+				64448DE71BABDCBB00837462 /* Imany vs Filatov & Karas - Don't be so shy.mp3 */,
 				64F949BD1BA9A851002CFAFA /* LaunchScreen.storyboard */,
 				64F949C01BA9A851002CFAFA /* Info.plist */,
 				64F949B81BA9A851002CFAFA /* GetYT.xcdatamodeld */,
@@ -216,6 +219,7 @@
 				64F949E81BA9BBE7002CFAFA /* PlayerVC.xib in Resources */,
 				64F949D11BA9AA09002CFAFA /* HomeVC.xib in Resources */,
 				64F949BC1BA9A851002CFAFA /* Assets.xcassets in Resources */,
+				64448DE81BABDCBB00837462 /* Imany vs Filatov & Karas - Don't be so shy.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

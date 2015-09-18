@@ -15,6 +15,7 @@
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
 + (CoreDataController *)sharedInstance;
+- (NSArray *)fetchModelClass:(Class)modelClass withPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray<NSSortDescriptor *> *)sortDescriptors;
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 

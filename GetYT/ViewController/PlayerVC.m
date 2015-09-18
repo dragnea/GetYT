@@ -15,6 +15,8 @@
 @property (nonatomic, weak) IBOutlet UIButton *stopButton;
 @property (nonatomic, weak) IBOutlet UIButton *previousButton;
 @property (nonatomic, weak) IBOutlet UIButton *nextButton;
+@property (nonatomic, weak) IBOutlet UILabel *songTimer;
+@property (nonatomic, weak) IBOutlet UISlider *songPosition;
 
 @end
 
@@ -23,8 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.tableView.contentInset = UIEdgeInsetsMake(100.0, 0.0, 0.0, 0.0);
+    [PlayerController sharedInstance].delegate = self;
+    self.tableView.contentInset = UIEdgeInsetsMake(140.0, 0.0, 0.0, 0.0);
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -96,7 +98,7 @@
 
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-
+    [[PlayerController sharedInstance] moveSongFromIndex:fromIndexPath.row toIndex:toIndexPath.row];
 }
 
 // Override to support conditional rearranging of the table view.
@@ -109,6 +111,15 @@
 
 - (void)playerControllerStatusChanged:(PlayerController *)playerController {
     
+}
+
+- (void)playerController:(PlayerController *)playerController secondsPlayed:(int)secondsPlayed secondsDuration:(int)secondsDuration {
+    div_t time = div(secondsPlayed, 60);
+    int minutes = time.quot;
+    int seconds = time.rem;
+    self.songTimer.text = [NSString stringWithFormat:@"%.2d:%.2d", minutes, seconds];
+    self.songPosition.maximumValue = secondsDuration;
+    self.songPosition.value = secondsPlayed;
 }
 
 @end
