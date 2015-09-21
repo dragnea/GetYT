@@ -8,6 +8,7 @@
 
 #import "PlayerVC.h"
 #import "PlayerController.h"
+#import "Song.h"
 
 @interface PlayerVC ()<UITableViewDataSource, UITableViewDelegate, PlayerControllerDelegate>
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
@@ -17,16 +18,18 @@
 @property (nonatomic, weak) IBOutlet UIButton *nextButton;
 @property (nonatomic, weak) IBOutlet UILabel *songTimer;
 @property (nonatomic, weak) IBOutlet UISlider *songPosition;
-
+@property (nonatomic, weak) PlayerController *playerController;
 @end
 
 @implementation PlayerVC
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [PlayerController sharedInstance].delegate = self;
+    _playerController = [PlayerController sharedInstance];
+    _playerController.delegate = self;
     self.tableView.contentInset = UIEdgeInsetsMake(140.0, 0.0, 0.0, 0.0);
+    
+    self.tableView.editing = YES;
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -45,38 +48,40 @@
     return YES;
 }
 
-- (IBAction)playPauseButtonTouched:(id)sender {
-    [[PlayerController sharedInstance] playOrPause];
+- (IBAction)playPauseButtonTouched:(UIButton *)sender {
+    [self.playerController playOrPause];
 }
 
 - (IBAction)stopButtonTouched:(id)sender {
-    [[PlayerController sharedInstance] stop];
+    [self.playerController stop];
 }
 
 - (IBAction)previousButtonTouched:(id)sender {
-    [[PlayerController sharedInstance] previous];
+    [self.playerController previous];
 }
 
 - (IBAction)nextButtonTouched:(id)sender {
-    [[PlayerController sharedInstance] next];
+    [self.playerController next];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [PlayerController sharedInstance].songs.count;
+    return self.playerController.songs.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (!cell) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"cell"];
     }
-    cell.textLabel.text = @"...";
+    Song *song = self.playerController.songs[indexPath.row];
+    cell.textLabel.text = song.title;
+    cell.detailTextLabel.text = @"---";
     return cell;
 }
 
@@ -98,7 +103,7 @@
 
 // Override to support rearranging the table view.
 - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-    [[PlayerController sharedInstance] moveSongFromIndex:fromIndexPath.row toIndex:toIndexPath.row];
+    [self.playerController moveSongFromIndex:fromIndexPath.row toIndex:toIndexPath.row];
 }
 
 // Override to support conditional rearranging of the table view.
@@ -110,7 +115,8 @@
 #pragma mark - PlayerControllerDelegate
 
 - (void)playerControllerStatusChanged:(PlayerController *)playerController {
-    
+    UIImage *playButtonImage = [UIImage imageNamed:playerController.playStatus == PlayerStatus_play ? @"media_pause" : @"media_play"];
+    [self.playPauseButton setImage:playButtonImage forState:UIControlStateNormal];
 }
 
 - (void)playerController:(PlayerController *)playerController secondsPlayed:(int)secondsPlayed secondsDuration:(int)secondsDuration {

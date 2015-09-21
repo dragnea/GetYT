@@ -102,6 +102,14 @@
     return fetchedObjects;
 }
 
+- (id)newObjectForClass:(Class)class {
+    return [NSEntityDescription insertNewObjectForEntityForName:NSStringFromClass(class) inManagedObjectContext:self.managedObjectContext];
+}
+
+- (void)removeObject:(id)object {
+    [self.managedObjectContext deleteObject:object];
+}
+
 #pragma mark - Core Data Saving support
 
 - (void)saveContext {

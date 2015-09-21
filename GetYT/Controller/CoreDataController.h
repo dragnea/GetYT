@@ -16,6 +16,8 @@
 
 + (CoreDataController *)sharedInstance;
 - (NSArray *)fetchModelClass:(Class)modelClass withPredicate:(NSPredicate *)predicate sortDescriptors:(NSArray<NSSortDescriptor *> *)sortDescriptors;
+- (id)newObjectForClass:(Class)class;
+- (void)removeObject:(id)object;
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 

@@ -15,5 +15,6 @@
 
 @dynamic url;
 @dynamic index;
+@dynamic title;
 
 @end

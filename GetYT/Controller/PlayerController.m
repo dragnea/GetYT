@@ -75,6 +75,17 @@
 }
 
 - (void)reloadSongs {
+    /*
+    for (NSInteger idx = 0; idx < 40; idx++) {
+        Song *song = [[CoreDataController sharedInstance] newObjectForClass:[Song class]];
+        song.index = @(idx);
+        song.url = [[NSBundle mainBundle] URLForResource:@"Imany vs Filatov & Karas - Don't be so shy" withExtension:@"mp3"].absoluteString;
+        song.title = [NSString stringWithFormat:@"%d - Imany vs Filatov & Karas - Don't be so shy", (int)idx];
+    }
+     
+    [[CoreDataController sharedInstance] saveContext];
+     */
+    
     NSSortDescriptor *songSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"index" ascending:YES];
     _songs = [[CoreDataController sharedInstance] fetchModelClass:[Song class] withPredicate:nil sortDescriptors:@[songSortDescriptor]];
 }
