@@ -9,7 +9,7 @@
 #import "AppDelegate.h"
 #import "CoreDataController.h"
 #import "PlayerController.h"
-#import "HomeVC.h"
+#import "PlayerVC.h"
 
 @interface AppDelegate ()
 
@@ -23,7 +23,7 @@
     [PlayerController sharedInstance];
     [CoreDataController sharedInstance];
     _window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    _window.rootViewController = [[HomeVC alloc] init];
+    _window.rootViewController = [[PlayerVC alloc] init];
     [_window makeKeyAndVisible];
     
     return YES;

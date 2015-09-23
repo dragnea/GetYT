@@ -9,14 +9,16 @@
 /* Begin PBXBuildFile section */
 		64448DE61BAAA22500837462 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64448DE51BAAA22500837462 /* PlayerController.m */; };
 		64448DE81BABDCBB00837462 /* Imany vs Filatov & Karas - Don't be so shy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 64448DE71BABDCBB00837462 /* Imany vs Filatov & Karas - Don't be so shy.mp3 */; };
+		64772B481BB165E700E4D4AB /* LeftMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64772B471BB165E700E4D4AB /* LeftMenuView.m */; };
+		64772B4B1BB191B700E4D4AB /* MenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 64772B4A1BB191B700E4D4AB /* MenuButton.m */; };
+		64772B4E1BB289F000E4D4AB /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 64772B4D1BB289F000E4D4AB /* MainVC.m */; };
+		64772B511BB2D79A00E4D4AB /* AnimatableShapeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 64772B501BB2D79A00E4D4AB /* AnimatableShapeLayer.m */; };
 		64F949AE1BA9A851002CFAFA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F949AD1BA9A851002CFAFA /* main.m */; };
 		64F949B11BA9A851002CFAFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F949B01BA9A851002CFAFA /* AppDelegate.m */; };
 		64F949BA1BA9A851002CFAFA /* GetYT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 64F949B81BA9A851002CFAFA /* GetYT.xcdatamodeld */; };
 		64F949BC1BA9A851002CFAFA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64F949BB1BA9A851002CFAFA /* Assets.xcassets */; };
 		64F949BF1BA9A851002CFAFA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 64F949BD1BA9A851002CFAFA /* LaunchScreen.storyboard */; };
 		64F949CB1BA9A918002CFAFA /* CoreDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F949CA1BA9A918002CFAFA /* CoreDataController.m */; };
-		64F949D01BA9AA09002CFAFA /* HomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F949CE1BA9AA09002CFAFA /* HomeVC.m */; };
-		64F949D11BA9AA09002CFAFA /* HomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64F949CF1BA9AA09002CFAFA /* HomeVC.xib */; };
 		64F949DD1BA9B2CE002CFAFA /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F949DA1BA9B2CE002CFAFA /* Song.m */; };
 		64F949DE1BA9B2CE002CFAFA /* Song+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F949DC1BA9B2CE002CFAFA /* Song+CoreDataProperties.m */; };
 		64F949E61BA9BA52002CFAFA /* PlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F949E51BA9BA52002CFAFA /* PlayerVC.m */; };
@@ -27,6 +29,14 @@
 		64448DE41BAAA22500837462 /* PlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerController.h; path = Controller/PlayerController.h; sourceTree = "<group>"; };
 		64448DE51BAAA22500837462 /* PlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerController.m; path = Controller/PlayerController.m; sourceTree = "<group>"; };
 		64448DE71BABDCBB00837462 /* Imany vs Filatov & Karas - Don't be so shy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Imany vs Filatov & Karas - Don't be so shy.mp3"; sourceTree = "<group>"; };
+		64772B461BB165E700E4D4AB /* LeftMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftMenuView.h; path = View/LeftMenuView.h; sourceTree = "<group>"; };
+		64772B471BB165E700E4D4AB /* LeftMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftMenuView.m; path = View/LeftMenuView.m; sourceTree = "<group>"; };
+		64772B491BB191B700E4D4AB /* MenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuButton.h; path = View/MenuButton.h; sourceTree = "<group>"; };
+		64772B4A1BB191B700E4D4AB /* MenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuButton.m; path = View/MenuButton.m; sourceTree = "<group>"; };
+		64772B4C1BB289F000E4D4AB /* MainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainVC.h; path = ViewController/MainVC.h; sourceTree = "<group>"; };
+		64772B4D1BB289F000E4D4AB /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainVC.m; path = ViewController/MainVC.m; sourceTree = "<group>"; };
+		64772B4F1BB2D79A00E4D4AB /* AnimatableShapeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnimatableShapeLayer.h; path = View/AnimatableShapeLayer.h; sourceTree = "<group>"; };
+		64772B501BB2D79A00E4D4AB /* AnimatableShapeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnimatableShapeLayer.m; path = View/AnimatableShapeLayer.m; sourceTree = "<group>"; };
 		64F949A91BA9A851002CFAFA /* GetYT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetYT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F949AD1BA9A851002CFAFA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		64F949AF1BA9A851002CFAFA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -37,9 +47,6 @@
 		64F949C01BA9A851002CFAFA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		64F949C91BA9A918002CFAFA /* CoreDataController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataController.h; path = Controller/CoreDataController.h; sourceTree = "<group>"; };
 		64F949CA1BA9A918002CFAFA /* CoreDataController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataController.m; path = Controller/CoreDataController.m; sourceTree = "<group>"; };
-		64F949CD1BA9AA09002CFAFA /* HomeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeVC.h; path = ViewController/HomeVC.h; sourceTree = "<group>"; };
-		64F949CE1BA9AA09002CFAFA /* HomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeVC.m; path = ViewController/HomeVC.m; sourceTree = "<group>"; };
-		64F949CF1BA9AA09002CFAFA /* HomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeVC.xib; path = ViewController/HomeVC.xib; sourceTree = "<group>"; };
 		64F949D91BA9B2CE002CFAFA /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Song.h; path = Model/CoreData/Song.h; sourceTree = "<group>"; };
 		64F949DA1BA9B2CE002CFAFA /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Song.m; path = Model/CoreData/Song.m; sourceTree = "<group>"; };
 		64F949DB1BA9B2CE002CFAFA /* Song+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Song+CoreDataProperties.h"; path = "Model/CoreData/Song+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -117,6 +124,12 @@
 		64F949C71BA9A8AE002CFAFA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				64772B461BB165E700E4D4AB /* LeftMenuView.h */,
+				64772B471BB165E700E4D4AB /* LeftMenuView.m */,
+				64772B491BB191B700E4D4AB /* MenuButton.h */,
+				64772B4A1BB191B700E4D4AB /* MenuButton.m */,
+				64772B4F1BB2D79A00E4D4AB /* AnimatableShapeLayer.h */,
+				64772B501BB2D79A00E4D4AB /* AnimatableShapeLayer.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -132,12 +145,11 @@
 		64F949CC1BA9A9E2002CFAFA /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				64F949CD1BA9AA09002CFAFA /* HomeVC.h */,
-				64F949CE1BA9AA09002CFAFA /* HomeVC.m */,
-				64F949CF1BA9AA09002CFAFA /* HomeVC.xib */,
 				64F949E41BA9BA52002CFAFA /* PlayerVC.h */,
 				64F949E51BA9BA52002CFAFA /* PlayerVC.m */,
 				64F949E71BA9BBE7002CFAFA /* PlayerVC.xib */,
+				64772B4C1BB289F000E4D4AB /* MainVC.h */,
+				64772B4D1BB289F000E4D4AB /* MainVC.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -218,7 +230,6 @@
 			files = (
 				64F949BF1BA9A851002CFAFA /* LaunchScreen.storyboard in Resources */,
 				64F949E81BA9BBE7002CFAFA /* PlayerVC.xib in Resources */,
-				64F949D11BA9AA09002CFAFA /* HomeVC.xib in Resources */,
 				64F949BC1BA9A851002CFAFA /* Assets.xcassets in Resources */,
 				64448DE81BABDCBB00837462 /* Imany vs Filatov & Karas - Don't be so shy.mp3 in Resources */,
 			);
@@ -231,14 +242,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				64772B481BB165E700E4D4AB /* LeftMenuView.m in Sources */,
 				64F949DD1BA9B2CE002CFAFA /* Song.m in Sources */,
+				64772B4E1BB289F000E4D4AB /* MainVC.m in Sources */,
 				64448DE61BAAA22500837462 /* PlayerController.m in Sources */,
 				64F949B11BA9A851002CFAFA /* AppDelegate.m in Sources */,
 				64F949AE1BA9A851002CFAFA /* main.m in Sources */,
 				64F949DE1BA9B2CE002CFAFA /* Song+CoreDataProperties.m in Sources */,
 				64F949CB1BA9A918002CFAFA /* CoreDataController.m in Sources */,
 				64F949E61BA9BA52002CFAFA /* PlayerVC.m in Sources */,
-				64F949D01BA9AA09002CFAFA /* HomeVC.m in Sources */,
+				64772B511BB2D79A00E4D4AB /* AnimatableShapeLayer.m in Sources */,
+				64772B4B1BB191B700E4D4AB /* MenuButton.m in Sources */,
 				64F949BA1BA9A851002CFAFA /* GetYT.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

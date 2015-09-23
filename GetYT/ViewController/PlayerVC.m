@@ -9,6 +9,7 @@
 #import "PlayerVC.h"
 #import "PlayerController.h"
 #import "Song.h"
+#import "LeftMenuView.h"
 
 @interface PlayerVC ()<UITableViewDataSource, UITableViewDelegate, PlayerControllerDelegate>
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
@@ -30,6 +31,8 @@
     self.tableView.contentInset = UIEdgeInsetsMake(140.0, 0.0, 0.0, 0.0);
     
     self.tableView.editing = YES;
+    
+    LeftMenuView *leftMenuView = [[LeftMenuView alloc] initWithView:self.view];
 }
 
 - (void)viewDidAppear:(BOOL)animated {

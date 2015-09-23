@@ -32,13 +32,13 @@
                     </connections>
                 </tableView>
                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LC6-Jv-a2r">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="zdB-4H-hfh">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="140"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist - Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nG4-kf-uUu">
-                                <rect key="frame" x="8" y="22" width="359" height="25"/>
+                                <rect key="frame" x="76" y="22" width="291" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="hXj-dS-qhK"/>
                                 </constraints>
@@ -46,32 +46,11 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20Z-TL-LQ7">
-                                <rect key="frame" x="23" y="47" width="46" height="46"/>
-                                <state key="normal" image="media_play"/>
-                                <connections>
-                                    <action selector="playPauseButtonTouched:" destination="-1" eventType="touchUpInside" id="OCQ-VL-ZkY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cd5-Q0-iQ2">
-                                <rect key="frame" x="77" y="47" width="46" height="46"/>
-                                <state key="normal" image="media_stop"/>
-                                <connections>
-                                    <action selector="stopButtonTouched:" destination="-1" eventType="touchUpInside" id="e93-No-A1j"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6WE-qP-GjR">
-                                <rect key="frame" x="131" y="47" width="46" height="46"/>
-                                <state key="normal" image="media_previous"/>
-                                <connections>
-                                    <action selector="previousButtonTouched:" destination="-1" eventType="touchUpInside" id="DQ7-gR-Cow"/>
-                                </connections>
-                            </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="500" translatesAutoresizingMaskIntoConstraints="NO" id="bzJ-JF-3km">
-                                <rect key="frame" x="74" y="97" width="295" height="31"/>
+                                <rect key="frame" x="74" y="137" width="295" height="31"/>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndv-dx-rkV">
-                                <rect key="frame" x="8" y="97" width="60" height="30"/>
+                                <rect key="frame" x="8" y="137" width="60" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="VaA-Zw-oLS"/>
                                     <constraint firstAttribute="height" constant="30" id="pyS-xV-7ya"/>
@@ -80,8 +59,29 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="20Z-TL-LQ7">
+                                <rect key="frame" x="117" y="67" width="46" height="46"/>
+                                <state key="normal" image="media_play"/>
+                                <connections>
+                                    <action selector="playPauseButtonTouched:" destination="-1" eventType="touchUpInside" id="OCQ-VL-ZkY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cd5-Q0-iQ2">
+                                <rect key="frame" x="171" y="67" width="46" height="46"/>
+                                <state key="normal" image="media_stop"/>
+                                <connections>
+                                    <action selector="stopButtonTouched:" destination="-1" eventType="touchUpInside" id="e93-No-A1j"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6WE-qP-GjR">
+                                <rect key="frame" x="225" y="67" width="46" height="46"/>
+                                <state key="normal" image="media_previous"/>
+                                <connections>
+                                    <action selector="previousButtonTouched:" destination="-1" eventType="touchUpInside" id="DQ7-gR-Cow"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qNv-Qi-IzC">
-                                <rect key="frame" x="185" y="47" width="46" height="46"/>
+                                <rect key="frame" x="279" y="67" width="46" height="46"/>
                                 <state key="normal" image="media_next"/>
                                 <connections>
                                     <action selector="nextButtonTouched:" destination="-1" eventType="touchUpInside" id="kwp-6Z-CMS"/>
@@ -90,7 +90,7 @@
                         </subviews>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="bzJ-JF-3km" secondAttribute="bottom" constant="13" id="9ny-jP-Tlz"/>
-                            <constraint firstItem="nG4-kf-uUu" firstAttribute="leading" secondItem="zdB-4H-hfh" secondAttribute="leading" constant="8" id="VLD-mD-sf0"/>
+                            <constraint firstItem="nG4-kf-uUu" firstAttribute="leading" secondItem="zdB-4H-hfh" secondAttribute="leading" constant="76" id="VLD-mD-sf0"/>
                             <constraint firstItem="bzJ-JF-3km" firstAttribute="leading" secondItem="ndv-dx-rkV" secondAttribute="trailing" constant="8" id="VQq-I9-7wC"/>
                             <constraint firstItem="nG4-kf-uUu" firstAttribute="top" secondItem="zdB-4H-hfh" secondAttribute="top" constant="22" id="ZQg-xw-22W"/>
                             <constraint firstItem="ndv-dx-rkV" firstAttribute="leading" secondItem="zdB-4H-hfh" secondAttribute="leading" constant="8" id="ZaO-4H-SDh"/>
@@ -100,7 +100,7 @@
                         </constraints>
                     </view>
                     <constraints>
-                        <constraint firstAttribute="height" constant="140" id="9xL-Q8-rXX"/>
+                        <constraint firstAttribute="height" constant="180" id="9xL-Q8-rXX"/>
                     </constraints>
                     <blurEffect style="light"/>
                 </visualEffectView>

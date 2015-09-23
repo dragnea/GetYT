@@ -15,7 +15,9 @@
 @property (nonatomic, strong, readonly) AVPlayer *player;
 @end
 
-@implementation PlayerController
+@implementation PlayerController {
+    NSMutableArray *_songs;
+}
 @synthesize player = _player;
 
 + (PlayerController *)sharedInstance {
@@ -87,7 +89,7 @@
      */
     
     NSSortDescriptor *songSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"index" ascending:YES];
-    _songs = [[CoreDataController sharedInstance] fetchModelClass:[Song class] withPredicate:nil sortDescriptors:@[songSortDescriptor]];
+    _songs = [[[CoreDataController sharedInstance] fetchModelClass:[Song class] withPredicate:nil sortDescriptors:@[songSortDescriptor]] mutableCopy];
 }
 
 - (void)next {
@@ -113,10 +115,11 @@
 - (void)playOrPause {
     if (_playStatus == PlayerStatus_pause ||
         _playStatus == PlayerStatus_stop) {
-        
+        /*
         NSURL *songURL = [[NSBundle mainBundle] URLForResource:@"Imany vs Filatov & Karas - Don't be so shy" withExtension:@"mp3"];
         AVPlayerItem *playerItem = [AVPlayerItem playerItemWithURL:songURL];
         [self.player replaceCurrentItemWithPlayerItem:playerItem];
+         */
         [self.player play];
         _playStatus = PlayerStatus_play;
         
@@ -152,13 +155,11 @@
 
 - (void)moveSongFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex {
     Song *fromSong = self.songs[fromIndex];
-    NSMutableArray *orderedSongs = [self.songs mutableCopy];
-    [orderedSongs removeObject:fromSong];
-    [orderedSongs insertObject:fromSong atIndex:toIndex];
-    [self.songs enumerateObjectsUsingBlock:^(Song * _Nonnull enumSong, NSUInteger idx, BOOL * _Nonnull stop) {
+    [_songs removeObject:fromSong];
+    [_songs insertObject:fromSong atIndex:toIndex];
+    [_songs enumerateObjectsUsingBlock:^(Song * _Nonnull enumSong, NSUInteger idx, BOOL * _Nonnull stop) {
         enumSong.index = @(idx);
     }];
-    
 }
 
 - (void)removeSong:(Song *)song {
