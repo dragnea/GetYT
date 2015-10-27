@@ -2,111 +2,32 @@
 //  PlayButton.m
 //  GetYT
 //
-//  Created by iOS developer on 28/09/15.
+//  Created by iOS developer on 27/10/15.
 //  Copyright © 2015 Dragnea Mihai. All rights reserved.
 //
 
 #import "PlayButton.h"
-#import "GYTTheme.h"
-#import "AnimatableShapeLayer.h"
-
-@interface PlayButton ()
-@property (nonatomic, strong) AnimatableShapeLayer *leftLayer;
-@property (nonatomic, strong) AnimatableShapeLayer *rightLayer;
-@property (nonatomic, strong) AnimatableShapeLayer *circleLayer;
-@end
 
 @implementation PlayButton
 
-- (instancetype)initWithCoder:(NSCoder *)aDecoder {
-    if (self = [super initWithCoder:aDecoder]) {
-        [self setupLayers];
-    }
-    return self;
-}
-
-- (instancetype)init {
-    if (self = [super init]) {
-        [self setupLayers];
-    }
-    return self;
-}
-
-- (instancetype)initWithFrame:(CGRect)frame {
-    if (self = [super initWithFrame:frame]) {
-        [self setupLayers];
-    }
-    return self;
-}
-
-- (void)setupLayers {
+- (void)setPaused:(BOOL)paused {
+    _paused = paused;
     
-    _showCircle = NO;
-    _showPause = NO;
-    
-    _leftLayer = [AnimatableShapeLayer layer];
-    _rightLayer = [AnimatableShapeLayer layer];
-    _circleLayer = [AnimatableShapeLayer layer];
-    
-    _circleLayer.path = CGPathCreateWithEllipseInRect(self.bounds, NULL);
-    _circleLayer.fillColor = [UIColor clearColor].CGColor;
-    [self.layer addSublayer:_circleLayer];
-    
-    CGMutablePathRef path = CGPathCreateMutable();
-    CGPathMoveToPoint(path, NULL, 0.0, 0.0);
-    CGPathAddLineToPoint(path, NULL, self.bounds.size.width, CGRectGetMidY(self.bounds));
-    CGPathAddLineToPoint(path, NULL, 0.0, self.bounds.size.height);
-    CGPathAddLineToPoint(path, NULL, 0.0, self.bounds.size.height);
-    _leftLayer.path = path;
-    _leftLayer.fillColor = [GYTTheme colorWhiteHighlighted].CGColor;
-    [self.layer addSublayer:_leftLayer];
-    
-    _rightLayer.path = path;
-    _rightLayer.fillColor = [GYTTheme colorWhiteHighlighted].CGColor;
-    [self.layer addSublayer:_rightLayer];
-}
-
-- (void)setShowPause:(BOOL)showPause {
-    _showPause = showPause;
-    
-    if (_showPause) {
-        CGFloat division = self.bounds.size.width / 5.0;
-        self.leftLayer.path = CGPathCreateWithRect(CGRectMake(division, 0.0, division, self.bounds.size.height), NULL);
-        self.rightLayer.path = CGPathCreateWithRect(CGRectMake(division * 3, 0.0, division, self.bounds.size.height), NULL);
-        
+    if (_paused) {
+        [self setImage:[UIImage imageNamed:self.fullscreen ? @"control_pause_fullscreen" : @"control_pause_normal"] forState:UIControlStateNormal];
     } else {
-        
-        CGMutablePathRef path = CGPathCreateMutable();
-        CGPathMoveToPoint(path, NULL, 0.0, 0.0);
-        CGPathAddLineToPoint(path, NULL, self.bounds.size.width, CGRectGetMidY(self.bounds));
-        CGPathAddLineToPoint(path, NULL, 0.0, self.bounds.size.height);
-        CGPathAddLineToPoint(path, NULL, 0.0, self.bounds.size.height);
-        self.leftLayer.path = path;
-        self.rightLayer.path = path;
-        
+        [self setImage:[UIImage imageNamed:self.fullscreen ? @"control_play_fullscreen" : @"control_play_normal"] forState:UIControlStateNormal];
     }
 }
 
-- (void)setShowCircle:(BOOL)showCircle {
-    _showCircle = showCircle;
+- (void)setFullscreen:(BOOL)fullscreen {
+    _fullscreen = fullscreen;
     
-    if (_showCircle) {
-        
-        self.leftLayer.fillColor = [GYTTheme colorRed].CGColor;
-        self.rightLayer.fillColor = [GYTTheme colorRed].CGColor;
-        self.circleLayer.fillColor = [GYTTheme colorWhiteNormal].CGColor;
-        
+    if (_fullscreen) {
+        [self setImage:[UIImage imageNamed:self.paused ? @"control_pause_fullscreen" : @"control_play_fullscreen"] forState:UIControlStateNormal];
     } else {
-        
-        self.leftLayer.fillColor = [GYTTheme colorWhiteHighlighted].CGColor;
-        self.rightLayer.fillColor = [GYTTheme colorWhiteHighlighted].CGColor;
-        self.circleLayer.fillColor = [UIColor clearColor].CGColor;
-        
+        [self setImage:[UIImage imageNamed:self.paused ? @"control_pause_normal" : @"control_play_normal"] forState:UIControlStateNormal];
     }
-}
-
-- (void)touchesEnded:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    self.showPause = !self.showPause;
 }
 
 @end

@@ -34,7 +34,7 @@
 		6A02CDEE1BB5C175005519AA /* PlaylistsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A02CDED1BB5C175005519AA /* PlaylistsController.m */; };
 		6A02CDF11BB5C515005519AA /* PlaylistsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A02CDF01BB5C515005519AA /* PlaylistsManager.m */; };
 		6A5BC0021BCAF914002D7228 /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5BC0011BCAF914002D7228 /* PlayerView.m */; };
-		6AFC6C831BB9C0D400F11B3A /* PlayButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC6C821BB9C0D400F11B3A /* PlayButton.m */; };
+		6A7515C61BE0246200E00A68 /* PlayButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A7515C51BE0246200E00A68 /* PlayButton.m */; };
 		6AFC6C891BB9C77800F11B3A /* GYTTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC6C881BB9C77800F11B3A /* GYTTheme.m */; };
 /* End PBXBuildFile section */
 
@@ -91,8 +91,8 @@
 		6A02CDF01BB5C515005519AA /* PlaylistsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlaylistsManager.m; path = Controller/PlaylistsManager.m; sourceTree = "<group>"; };
 		6A5BC0001BCAF914002D7228 /* PlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerView.h; path = View/PlayerView.h; sourceTree = "<group>"; };
 		6A5BC0011BCAF914002D7228 /* PlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerView.m; path = View/PlayerView.m; sourceTree = "<group>"; };
-		6AFC6C811BB9C0D400F11B3A /* PlayButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayButton.h; path = View/PlayButton.h; sourceTree = "<group>"; };
-		6AFC6C821BB9C0D400F11B3A /* PlayButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayButton.m; path = View/PlayButton.m; sourceTree = "<group>"; };
+		6A7515C41BE0246200E00A68 /* PlayButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayButton.h; path = View/PlayButton.h; sourceTree = "<group>"; };
+		6A7515C51BE0246200E00A68 /* PlayButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayButton.m; path = View/PlayButton.m; sourceTree = "<group>"; };
 		6AFC6C871BB9C77800F11B3A /* GYTTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GYTTheme.h; path = Model/GYTTheme.h; sourceTree = "<group>"; };
 		6AFC6C881BB9C77800F11B3A /* GYTTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GYTTheme.m; path = Model/GYTTheme.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -173,8 +173,8 @@
 			children = (
 				64772B4F1BB2D79A00E4D4AB /* AnimatableShapeLayer.h */,
 				64772B501BB2D79A00E4D4AB /* AnimatableShapeLayer.m */,
-				6AFC6C811BB9C0D400F11B3A /* PlayButton.h */,
-				6AFC6C821BB9C0D400F11B3A /* PlayButton.m */,
+				6A7515C41BE0246200E00A68 /* PlayButton.h */,
+				6A7515C51BE0246200E00A68 /* PlayButton.m */,
 				6A5BC0001BCAF914002D7228 /* PlayerView.h */,
 				6A5BC0011BCAF914002D7228 /* PlayerView.m */,
 			);
@@ -343,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64F949DD1BA9B2CE002CFAFA /* Song.m in Sources */,
+				6A7515C61BE0246200E00A68 /* PlayButton.m in Sources */,
 				6A02CDCA1BB5B239005519AA /* Playlist+CoreDataProperties.m in Sources */,
 				6A02CDE41BB5B917005519AA /* AFHTTPRequestOperationManager.m in Sources */,
 				6AFC6C891BB9C77800F11B3A /* GYTTheme.m in Sources */,
@@ -361,7 +362,6 @@
 				64F949DE1BA9B2CE002CFAFA /* Song+CoreDataProperties.m in Sources */,
 				6A5BC0021BCAF914002D7228 /* PlayerView.m in Sources */,
 				64F949CB1BA9A918002CFAFA /* CoreDataController.m in Sources */,
-				6AFC6C831BB9C0D400F11B3A /* PlayButton.m in Sources */,
 				6A02CDF11BB5C515005519AA /* PlaylistsManager.m in Sources */,
 				64F949E61BA9BA52002CFAFA /* PlayerVC.m in Sources */,
 				64772B511BB2D79A00E4D4AB /* AnimatableShapeLayer.m in Sources */,

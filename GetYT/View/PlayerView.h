@@ -7,9 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PlayButton.h"
+@class PlayButton;
+
+typedef NS_OPTIONS(NSInteger, PlayerViewState) {
+    PlayerViewState_normal,
+    PlayerViewState_fullscreen
+};
 
 @interface PlayerView : UIVisualEffectView
+@property (nonatomic, strong, readonly) UIButton *menuButton;
 @property (nonatomic, strong, readonly) PlayButton *playButton;
+@property (nonatomic, strong, readonly) UIButton *prevButton;
+@property (nonatomic, strong, readonly) UIButton *nextButton;
+@property (nonatomic, strong, readonly) UIButton *maximizeButton;
+@property (nonatomic, strong, readonly) UISlider *songPositionSlider;
+@property (nonatomic) PlayerViewState state;
 
 @end
