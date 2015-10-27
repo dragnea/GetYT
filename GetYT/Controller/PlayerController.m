@@ -11,14 +11,13 @@
 #import <AVFoundation/AVFoundation.h>
 #import "Song.h"
 
-@interface PlayerController ()
-@property (nonatomic, strong, readonly) AVPlayer *player;
+static NSString *kPCPlayerMode = @"PCPlayerMode";
+
+@interface PlayerController ()<AVAudioPlayerDelegate>
+@property (nonatomic, strong, readonly) AVAudioPlayer *audioPlayer;
 @end
 
-@implementation PlayerController {
-    NSMutableArray *_songs;
-}
-@synthesize player = _player;
+@implementation PlayerController
 
 + (PlayerController *)sharedInstance {
     static PlayerController *staticInstance = nil;
@@ -32,149 +31,52 @@
 - (id)init {
     if (self = [super init]) {
         
-        NSError *categoryError = nil;
-        [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayback error:&categoryError];
-        
-        if (!categoryError) {
-            NSLog(@"AVAudioSessionCategoryPlayback active");
-        } else {
-            NSLog(@"Error setting category! %@", [categoryError description]);
-        }
-        
-        //activation of audio session
-        NSError *activationError = nil;
-        if (![[AVAudioSession sharedInstance] setActive:YES error:&activationError]) {
-            if (activationError) {
-                NSLog(@"Could not activate audio session. %@", activationError.localizedDescription);
-            } else {
-                NSLog(@"Audio session could not be activated!");
-            }
-        } else {
-            NSLog(@"Audio session activated");
-        }
-        
-        NSURL *songURL = [[NSBundle mainBundle] URLForResource:@"Imany vs Filatov & Karas - Don't be so shy" withExtension:@"mp3"];
-        NSURL *libraryPath = [[NSFileManager defaultManager] URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask].lastObject;
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(audioSessionInterrupted:)
-                                                     name:AVAudioSessionInterruptionNotification
-                                                   object:[AVAudioSession sharedInstance]];
-        
-        [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(playerItemDidReachEnd:)
-                                                     name:AVPlayerItemDidPlayToEndTimeNotification
-                                                   object:_player.currentItem];
-        
-        [self reloadSongs];
+        _audioPlayer = [[AVAudioPlayer alloc] init];
         
     }
     return self;
 }
 
-- (void)dealloc {
-    [self.player removeTimeObserver:self];
-}
-
-- (void)reloadSongs {
-    /*
-    for (NSInteger idx = 0; idx < 40; idx++) {
-        Song *song = [[CoreDataController sharedInstance] newObjectForClass:[Song class]];
-        song.index = @(idx);
-        song.url = [[NSBundle mainBundle] URLForResource:@"Imany vs Filatov & Karas - Don't be so shy" withExtension:@"mp3"].absoluteString;
-        song.title = [NSString stringWithFormat:@"%d - Imany vs Filatov & Karas - Don't be so shy", (int)idx];
+- (void)setPlayStatus:(PCStatus)playStatus {
+    switch (playStatus) {
+        case PCStatus_play:
+            
+            break;
+        case PCStatus_pause:
+            
+            break;
+        case PCStatus_stop:
+            
+            break;
+            
+        default:
+            break;
     }
-     
-    [[CoreDataController sharedInstance] saveContext];
-     */
+    _playStatus = playStatus;
+}
+
+- (void)setPlayMode:(PCPlayMode)playMode {
+    [[NSUserDefaults standardUserDefaults] setInteger:playMode forKey:kPCPlayerMode];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+- (PCPlayMode)playMode {
+    return [[NSUserDefaults standardUserDefaults] integerForKey:kPCPlayerMode];
+}
+
+#pragma mark - AVAudioPlayerDelegate
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
     
-    NSSortDescriptor *songSortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"index" ascending:YES];
-    _songs = [[[CoreDataController sharedInstance] fetchModelClass:[Song class] withPredicate:nil sortDescriptors:@[songSortDescriptor]] mutableCopy];
 }
 
-- (void)next {
-    
-}
-
-- (void)previous {
-    
-}
-
-- (AVPlayer *)player {
-    if (!_player) {
-        _player = [[AVPlayer alloc] init];
-        CMTime periodicRefresh = CMTimeMakeWithSeconds(1.0f, 1);
-        __unsafe_unretained typeof(self) _self = self;
-        [_player addPeriodicTimeObserverForInterval:periodicRefresh queue:NULL usingBlock:^(CMTime time) {
-            [_self.delegate playerController:_self secondsPlayed:CMTimeGetSeconds(time) secondsDuration:CMTimeGetSeconds(_self.player.currentItem.duration)];
-        }];
-    }
-    return _player;
-}
-
-- (void)playOrPause {
-    if (_playStatus == PlayerStatus_pause ||
-        _playStatus == PlayerStatus_stop) {
-        /*
-        NSURL *songURL = [[NSBundle mainBundle] URLForResource:@"Imany vs Filatov & Karas - Don't be so shy" withExtension:@"mp3"];
-        AVPlayerItem *playerItem = [AVPlayerItem playerItemWithURL:songURL];
-        [self.player replaceCurrentItemWithPlayerItem:playerItem];
-         */
-        [self.player play];
-        _playStatus = PlayerStatus_play;
-        
-    } else if (_playStatus == PlayerStatus_play) {
-        
-        [self.player pause];
-        _playStatus = PlayerStatus_pause;
-        
-    } else {
-        
-        // the player is stopped
-        
-    }
-    
-    [self.delegate playerControllerStatusChanged:self];
-}
-
-- (void)playSong:(Song *)song {
-    _playStatus = PlayerStatus_play;
-    _playingSong = song;
-    [self.delegate playerControllerStatusChanged:self];
-}
-
-- (void)stop {
-    _playStatus = PlayerStatus_stop;
-    _playingSong = nil;
-    [self.delegate playerControllerStatusChanged:self];
-}
-
-- (void)setPlayMode:(PlayerPlayMode)playMode {
-    _playMode = playMode;
-}
-
-- (void)moveSongFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex {
-    Song *fromSong = self.songs[fromIndex];
-    [_songs removeObject:fromSong];
-    [_songs insertObject:fromSong atIndex:toIndex];
-    [_songs enumerateObjectsUsingBlock:^(Song * _Nonnull enumSong, NSUInteger idx, BOOL * _Nonnull stop) {
-        enumSong.index = @(idx);
-    }];
-}
-
-- (void)removeSong:(Song *)song {
+- (void)audioPlayerDecodeErrorDidOccur:(AVAudioPlayer *)player error:(NSError *)error {
     
 }
 
 #pragma mark - AVAudioSessionInterruption
 
 - (void)audioSessionInterrupted:(NSNotification *)notification {
-    
-}
-
-#pragma mark - AVQueuePlayer
-
-- (void)playerItemDidReachEnd:(NSNotification *)notification {
     
 }
 

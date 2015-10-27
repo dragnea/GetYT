@@ -6,8 +6,9 @@
 //  Copyright © 2015 Dragnea Mihai. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
+#import "ManagedObject.h"
+
+@class Playlist;
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -16,8 +16,11 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Song (CoreDataProperties)
 
 @property (nullable, nonatomic, retain) NSString *url;
+@property (nullable, nonatomic, retain) NSString *file;
 @property (nullable, nonatomic, retain) NSNumber *index;
 @property (nullable, nonatomic, retain) NSString *title;
+@property (nullable, nonatomic, retain) NSDate *dateAdded;
+@property (nullable, nonatomic, retain) Playlist *playlist;
 
 @end
 

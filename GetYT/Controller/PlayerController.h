@@ -8,44 +8,26 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_OPTIONS(NSInteger, PlayerStatus) {
-    PlayerStatus_play,
-    PlayerStatus_pause,
-    PlayerStatus_stop
+typedef NS_OPTIONS(NSInteger, PCStatus) {
+    PCStatus_play,
+    PCStatus_pause,
+    PCStatus_stop
 };
 
-typedef NS_OPTIONS(NSInteger, PlayerPlayMode) {
-    PlayerPlayMode_normal,
-    PlayerPlayMode_loopList,
-    PlayerPlayMode_loopSong
+typedef NS_OPTIONS(NSInteger, PCPlayMode) {
+    PCPlayMode_once,
+    PCPlayMode_normal,
+    PCPlayMode_loopSong,
+    PCPlayMode_loopList
 };
 
 @class Song;
 
-@protocol PlayerControllerDelegate;
-
 @interface PlayerController : NSObject
-
-@property (nonatomic, strong, readonly) NSArray<Song *> *songs;
-@property (nonatomic, strong, readonly) Song *playingSong;
-@property (nonatomic, readonly) PlayerStatus playStatus;
-@property (nonatomic) PlayerPlayMode playMode;
-@property (nonatomic, weak) id <PlayerControllerDelegate>delegate;
+@property (nonatomic, strong) Song *currentSong;
+@property (nonatomic) PCStatus playStatus;
+@property (nonatomic) PCPlayMode playMode;
 
 + (PlayerController *)sharedInstance;
-- (void)next;
-- (void)previous;
-- (void)playOrPause;
-- (void)stop;
-- (void)playSong:(Song *)song;
-- (void)moveSongFromIndex:(NSInteger)fromIndex toIndex:(NSInteger)toIndex;
-- (void)removeSong:(Song *)song;
-
-@end
-
-@protocol PlayerControllerDelegate <NSObject>
-
-- (void)playerControllerStatusChanged:(PlayerController *)playerController;
-- (void)playerController:(PlayerController *)playerController secondsPlayed:(int)secondsPlayed secondsDuration:(int)secondsDuration;
 
 @end

@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		64448DE61BAAA22500837462 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64448DE51BAAA22500837462 /* PlayerController.m */; };
-		64448DE81BABDCBB00837462 /* Imany vs Filatov & Karas - Don't be so shy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 64448DE71BABDCBB00837462 /* Imany vs Filatov & Karas - Don't be so shy.mp3 */; };
-		64772B481BB165E700E4D4AB /* LeftMenuView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64772B471BB165E700E4D4AB /* LeftMenuView.m */; };
-		64772B4B1BB191B700E4D4AB /* MenuButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 64772B4A1BB191B700E4D4AB /* MenuButton.m */; };
-		64772B4E1BB289F000E4D4AB /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 64772B4D1BB289F000E4D4AB /* MainVC.m */; };
 		64772B511BB2D79A00E4D4AB /* AnimatableShapeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 64772B501BB2D79A00E4D4AB /* AnimatableShapeLayer.m */; };
 		64F949AE1BA9A851002CFAFA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F949AD1BA9A851002CFAFA /* main.m */; };
 		64F949B11BA9A851002CFAFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F949B01BA9A851002CFAFA /* AppDelegate.m */; };
@@ -23,18 +19,28 @@
 		64F949DE1BA9B2CE002CFAFA /* Song+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F949DC1BA9B2CE002CFAFA /* Song+CoreDataProperties.m */; };
 		64F949E61BA9BA52002CFAFA /* PlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F949E51BA9BA52002CFAFA /* PlayerVC.m */; };
 		64F949E81BA9BBE7002CFAFA /* PlayerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64F949E71BA9BBE7002CFAFA /* PlayerVC.xib */; };
+		6A02CDC51BB5AE6B005519AA /* ManagedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A02CDC41BB5AE6B005519AA /* ManagedObject.m */; };
+		6A02CDCA1BB5B239005519AA /* Playlist+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A02CDC71BB5B239005519AA /* Playlist+CoreDataProperties.m */; };
+		6A02CDCB1BB5B239005519AA /* Playlist.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A02CDC91BB5B239005519AA /* Playlist.m */; };
+		6A02CDE31BB5B917005519AA /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A02CDD11BB5B917005519AA /* AFHTTPRequestOperation.m */; };
+		6A02CDE41BB5B917005519AA /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A02CDD31BB5B917005519AA /* AFHTTPRequestOperationManager.m */; };
+		6A02CDE51BB5B917005519AA /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A02CDD51BB5B917005519AA /* AFHTTPSessionManager.m */; };
+		6A02CDE61BB5B917005519AA /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A02CDD81BB5B917005519AA /* AFNetworkReachabilityManager.m */; };
+		6A02CDE71BB5B917005519AA /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A02CDDA1BB5B917005519AA /* AFSecurityPolicy.m */; };
+		6A02CDE81BB5B917005519AA /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A02CDDC1BB5B917005519AA /* AFURLConnectionOperation.m */; };
+		6A02CDE91BB5B917005519AA /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A02CDDE1BB5B917005519AA /* AFURLRequestSerialization.m */; };
+		6A02CDEA1BB5B917005519AA /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A02CDE01BB5B917005519AA /* AFURLResponseSerialization.m */; };
+		6A02CDEB1BB5B917005519AA /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A02CDE21BB5B917005519AA /* AFURLSessionManager.m */; };
+		6A02CDEE1BB5C175005519AA /* PlaylistsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A02CDED1BB5C175005519AA /* PlaylistsController.m */; };
+		6A02CDF11BB5C515005519AA /* PlaylistsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A02CDF01BB5C515005519AA /* PlaylistsManager.m */; };
+		6A5BC0021BCAF914002D7228 /* PlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A5BC0011BCAF914002D7228 /* PlayerView.m */; };
+		6AFC6C831BB9C0D400F11B3A /* PlayButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC6C821BB9C0D400F11B3A /* PlayButton.m */; };
+		6AFC6C891BB9C77800F11B3A /* GYTTheme.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AFC6C881BB9C77800F11B3A /* GYTTheme.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		64448DE41BAAA22500837462 /* PlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerController.h; path = Controller/PlayerController.h; sourceTree = "<group>"; };
 		64448DE51BAAA22500837462 /* PlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerController.m; path = Controller/PlayerController.m; sourceTree = "<group>"; };
-		64448DE71BABDCBB00837462 /* Imany vs Filatov & Karas - Don't be so shy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Imany vs Filatov & Karas - Don't be so shy.mp3"; sourceTree = "<group>"; };
-		64772B461BB165E700E4D4AB /* LeftMenuView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LeftMenuView.h; path = View/LeftMenuView.h; sourceTree = "<group>"; };
-		64772B471BB165E700E4D4AB /* LeftMenuView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LeftMenuView.m; path = View/LeftMenuView.m; sourceTree = "<group>"; };
-		64772B491BB191B700E4D4AB /* MenuButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MenuButton.h; path = View/MenuButton.h; sourceTree = "<group>"; };
-		64772B4A1BB191B700E4D4AB /* MenuButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MenuButton.m; path = View/MenuButton.m; sourceTree = "<group>"; };
-		64772B4C1BB289F000E4D4AB /* MainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainVC.h; path = ViewController/MainVC.h; sourceTree = "<group>"; };
-		64772B4D1BB289F000E4D4AB /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainVC.m; path = ViewController/MainVC.m; sourceTree = "<group>"; };
 		64772B4F1BB2D79A00E4D4AB /* AnimatableShapeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnimatableShapeLayer.h; path = View/AnimatableShapeLayer.h; sourceTree = "<group>"; };
 		64772B501BB2D79A00E4D4AB /* AnimatableShapeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnimatableShapeLayer.m; path = View/AnimatableShapeLayer.m; sourceTree = "<group>"; };
 		64F949A91BA9A851002CFAFA /* GetYT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetYT.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +60,41 @@
 		64F949E41BA9BA52002CFAFA /* PlayerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerVC.h; path = ViewController/PlayerVC.h; sourceTree = "<group>"; };
 		64F949E51BA9BA52002CFAFA /* PlayerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerVC.m; path = ViewController/PlayerVC.m; sourceTree = "<group>"; };
 		64F949E71BA9BBE7002CFAFA /* PlayerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PlayerVC.xib; path = ViewController/PlayerVC.xib; sourceTree = "<group>"; };
+		6A02CDC31BB5AE6A005519AA /* ManagedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ManagedObject.h; path = Model/CoreData/ManagedObject.h; sourceTree = "<group>"; };
+		6A02CDC41BB5AE6B005519AA /* ManagedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ManagedObject.m; path = Model/CoreData/ManagedObject.m; sourceTree = "<group>"; };
+		6A02CDC61BB5B239005519AA /* Playlist+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Playlist+CoreDataProperties.h"; path = "Model/CoreData/Playlist+CoreDataProperties.h"; sourceTree = "<group>"; };
+		6A02CDC71BB5B239005519AA /* Playlist+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Playlist+CoreDataProperties.m"; path = "Model/CoreData/Playlist+CoreDataProperties.m"; sourceTree = "<group>"; };
+		6A02CDC81BB5B239005519AA /* Playlist.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Playlist.h; path = Model/CoreData/Playlist.h; sourceTree = "<group>"; };
+		6A02CDC91BB5B239005519AA /* Playlist.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Playlist.m; path = Model/CoreData/Playlist.m; sourceTree = "<group>"; };
+		6A02CDD01BB5B917005519AA /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = Libraries/AFNetworking/AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		6A02CDD11BB5B917005519AA /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperation.m; path = Libraries/AFNetworking/AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		6A02CDD21BB5B917005519AA /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperationManager.h; path = Libraries/AFNetworking/AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		6A02CDD31BB5B917005519AA /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperationManager.m; path = Libraries/AFNetworking/AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		6A02CDD41BB5B917005519AA /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = Libraries/AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		6A02CDD51BB5B917005519AA /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = Libraries/AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		6A02CDD61BB5B917005519AA /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = Libraries/AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
+		6A02CDD71BB5B917005519AA /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = Libraries/AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		6A02CDD81BB5B917005519AA /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = Libraries/AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		6A02CDD91BB5B917005519AA /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = Libraries/AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
+		6A02CDDA1BB5B917005519AA /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = Libraries/AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
+		6A02CDDB1BB5B917005519AA /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFURLConnectionOperation.h; path = Libraries/AFNetworking/AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		6A02CDDC1BB5B917005519AA /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFURLConnectionOperation.m; path = Libraries/AFNetworking/AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		6A02CDDD1BB5B917005519AA /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = Libraries/AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		6A02CDDE1BB5B917005519AA /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = Libraries/AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		6A02CDDF1BB5B917005519AA /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = Libraries/AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		6A02CDE01BB5B917005519AA /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = Libraries/AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		6A02CDE11BB5B917005519AA /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = Libraries/AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
+		6A02CDE21BB5B917005519AA /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = Libraries/AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
+		6A02CDEC1BB5C175005519AA /* PlaylistsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlaylistsController.h; path = Controller/PlaylistsController.h; sourceTree = "<group>"; };
+		6A02CDED1BB5C175005519AA /* PlaylistsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlaylistsController.m; path = Controller/PlaylistsController.m; sourceTree = "<group>"; };
+		6A02CDEF1BB5C515005519AA /* PlaylistsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlaylistsManager.h; path = Controller/PlaylistsManager.h; sourceTree = "<group>"; };
+		6A02CDF01BB5C515005519AA /* PlaylistsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlaylistsManager.m; path = Controller/PlaylistsManager.m; sourceTree = "<group>"; };
+		6A5BC0001BCAF914002D7228 /* PlayerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayerView.h; path = View/PlayerView.h; sourceTree = "<group>"; };
+		6A5BC0011BCAF914002D7228 /* PlayerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerView.m; path = View/PlayerView.m; sourceTree = "<group>"; };
+		6AFC6C811BB9C0D400F11B3A /* PlayButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayButton.h; path = View/PlayButton.h; sourceTree = "<group>"; };
+		6AFC6C821BB9C0D400F11B3A /* PlayButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayButton.m; path = View/PlayButton.m; sourceTree = "<group>"; };
+		6AFC6C871BB9C77800F11B3A /* GYTTheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GYTTheme.h; path = Model/GYTTheme.h; sourceTree = "<group>"; };
+		6AFC6C881BB9C77800F11B3A /* GYTTheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GYTTheme.m; path = Model/GYTTheme.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,10 +131,12 @@
 				64F949C71BA9A8AE002CFAFA /* View */,
 				64F949CC1BA9A9E2002CFAFA /* ViewController */,
 				64F949C61BA9A8A8002CFAFA /* Controller */,
+				6A02CDCE1BB5B862005519AA /* Libraries */,
 				64F949AF1BA9A851002CFAFA /* AppDelegate.h */,
 				64F949B01BA9A851002CFAFA /* AppDelegate.m */,
+				6AFC6C871BB9C77800F11B3A /* GYTTheme.h */,
+				6AFC6C881BB9C77800F11B3A /* GYTTheme.m */,
 				64F949BB1BA9A851002CFAFA /* Assets.xcassets */,
-				64448DE71BABDCBB00837462 /* Imany vs Filatov & Karas - Don't be so shy.mp3 */,
 				64F949BD1BA9A851002CFAFA /* LaunchScreen.storyboard */,
 				64F949C01BA9A851002CFAFA /* Info.plist */,
 				64F949B81BA9A851002CFAFA /* GetYT.xcdatamodeld */,
@@ -117,6 +160,10 @@
 				64F949CA1BA9A918002CFAFA /* CoreDataController.m */,
 				64448DE41BAAA22500837462 /* PlayerController.h */,
 				64448DE51BAAA22500837462 /* PlayerController.m */,
+				6A02CDEC1BB5C175005519AA /* PlaylistsController.h */,
+				6A02CDED1BB5C175005519AA /* PlaylistsController.m */,
+				6A02CDEF1BB5C515005519AA /* PlaylistsManager.h */,
+				6A02CDF01BB5C515005519AA /* PlaylistsManager.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -124,12 +171,12 @@
 		64F949C71BA9A8AE002CFAFA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				64772B461BB165E700E4D4AB /* LeftMenuView.h */,
-				64772B471BB165E700E4D4AB /* LeftMenuView.m */,
-				64772B491BB191B700E4D4AB /* MenuButton.h */,
-				64772B4A1BB191B700E4D4AB /* MenuButton.m */,
 				64772B4F1BB2D79A00E4D4AB /* AnimatableShapeLayer.h */,
 				64772B501BB2D79A00E4D4AB /* AnimatableShapeLayer.m */,
+				6AFC6C811BB9C0D400F11B3A /* PlayButton.h */,
+				6AFC6C821BB9C0D400F11B3A /* PlayButton.m */,
+				6A5BC0001BCAF914002D7228 /* PlayerView.h */,
+				6A5BC0011BCAF914002D7228 /* PlayerView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -148,8 +195,6 @@
 				64F949E41BA9BA52002CFAFA /* PlayerVC.h */,
 				64F949E51BA9BA52002CFAFA /* PlayerVC.m */,
 				64F949E71BA9BBE7002CFAFA /* PlayerVC.xib */,
-				64772B4C1BB289F000E4D4AB /* MainVC.h */,
-				64772B4D1BB289F000E4D4AB /* MainVC.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -157,12 +202,68 @@
 		64F949D81BA9B2B5002CFAFA /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				64F949D91BA9B2CE002CFAFA /* Song.h */,
-				64F949DA1BA9B2CE002CFAFA /* Song.m */,
-				64F949DB1BA9B2CE002CFAFA /* Song+CoreDataProperties.h */,
-				64F949DC1BA9B2CE002CFAFA /* Song+CoreDataProperties.m */,
+				6A02CDC31BB5AE6A005519AA /* ManagedObject.h */,
+				6A02CDC41BB5AE6B005519AA /* ManagedObject.m */,
+				6A02CDCD1BB5B274005519AA /* Properties */,
+				6A02CDCC1BB5B25D005519AA /* Model */,
 			);
 			name = CoreData;
+			sourceTree = "<group>";
+		};
+		6A02CDCC1BB5B25D005519AA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				64F949D91BA9B2CE002CFAFA /* Song.h */,
+				64F949DA1BA9B2CE002CFAFA /* Song.m */,
+				6A02CDC81BB5B239005519AA /* Playlist.h */,
+				6A02CDC91BB5B239005519AA /* Playlist.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		6A02CDCD1BB5B274005519AA /* Properties */ = {
+			isa = PBXGroup;
+			children = (
+				64F949DB1BA9B2CE002CFAFA /* Song+CoreDataProperties.h */,
+				64F949DC1BA9B2CE002CFAFA /* Song+CoreDataProperties.m */,
+				6A02CDC61BB5B239005519AA /* Playlist+CoreDataProperties.h */,
+				6A02CDC71BB5B239005519AA /* Playlist+CoreDataProperties.m */,
+			);
+			name = Properties;
+			sourceTree = "<group>";
+		};
+		6A02CDCE1BB5B862005519AA /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				6A02CDCF1BB5B909005519AA /* AFNetworking */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		6A02CDCF1BB5B909005519AA /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				6A02CDD01BB5B917005519AA /* AFHTTPRequestOperation.h */,
+				6A02CDD11BB5B917005519AA /* AFHTTPRequestOperation.m */,
+				6A02CDD21BB5B917005519AA /* AFHTTPRequestOperationManager.h */,
+				6A02CDD31BB5B917005519AA /* AFHTTPRequestOperationManager.m */,
+				6A02CDD41BB5B917005519AA /* AFHTTPSessionManager.h */,
+				6A02CDD51BB5B917005519AA /* AFHTTPSessionManager.m */,
+				6A02CDD61BB5B917005519AA /* AFNetworking.h */,
+				6A02CDD71BB5B917005519AA /* AFNetworkReachabilityManager.h */,
+				6A02CDD81BB5B917005519AA /* AFNetworkReachabilityManager.m */,
+				6A02CDD91BB5B917005519AA /* AFSecurityPolicy.h */,
+				6A02CDDA1BB5B917005519AA /* AFSecurityPolicy.m */,
+				6A02CDDB1BB5B917005519AA /* AFURLConnectionOperation.h */,
+				6A02CDDC1BB5B917005519AA /* AFURLConnectionOperation.m */,
+				6A02CDDD1BB5B917005519AA /* AFURLRequestSerialization.h */,
+				6A02CDDE1BB5B917005519AA /* AFURLRequestSerialization.m */,
+				6A02CDDF1BB5B917005519AA /* AFURLResponseSerialization.h */,
+				6A02CDE01BB5B917005519AA /* AFURLResponseSerialization.m */,
+				6A02CDE11BB5B917005519AA /* AFURLSessionManager.h */,
+				6A02CDE21BB5B917005519AA /* AFURLSessionManager.m */,
+			);
+			name = AFNetworking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +332,6 @@
 				64F949BF1BA9A851002CFAFA /* LaunchScreen.storyboard in Resources */,
 				64F949E81BA9BBE7002CFAFA /* PlayerVC.xib in Resources */,
 				64F949BC1BA9A851002CFAFA /* Assets.xcassets in Resources */,
-				64448DE81BABDCBB00837462 /* Imany vs Filatov & Karas - Don't be so shy.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,18 +342,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64772B481BB165E700E4D4AB /* LeftMenuView.m in Sources */,
 				64F949DD1BA9B2CE002CFAFA /* Song.m in Sources */,
-				64772B4E1BB289F000E4D4AB /* MainVC.m in Sources */,
+				6A02CDCA1BB5B239005519AA /* Playlist+CoreDataProperties.m in Sources */,
+				6A02CDE41BB5B917005519AA /* AFHTTPRequestOperationManager.m in Sources */,
+				6AFC6C891BB9C77800F11B3A /* GYTTheme.m in Sources */,
+				6A02CDE81BB5B917005519AA /* AFURLConnectionOperation.m in Sources */,
 				64448DE61BAAA22500837462 /* PlayerController.m in Sources */,
 				64F949B11BA9A851002CFAFA /* AppDelegate.m in Sources */,
+				6A02CDE91BB5B917005519AA /* AFURLRequestSerialization.m in Sources */,
+				6A02CDC51BB5AE6B005519AA /* ManagedObject.m in Sources */,
+				6A02CDE51BB5B917005519AA /* AFHTTPSessionManager.m in Sources */,
+				6A02CDE31BB5B917005519AA /* AFHTTPRequestOperation.m in Sources */,
 				64F949AE1BA9A851002CFAFA /* main.m in Sources */,
+				6A02CDE71BB5B917005519AA /* AFSecurityPolicy.m in Sources */,
+				6A02CDCB1BB5B239005519AA /* Playlist.m in Sources */,
+				6A02CDE61BB5B917005519AA /* AFNetworkReachabilityManager.m in Sources */,
+				6A02CDEB1BB5B917005519AA /* AFURLSessionManager.m in Sources */,
 				64F949DE1BA9B2CE002CFAFA /* Song+CoreDataProperties.m in Sources */,
+				6A5BC0021BCAF914002D7228 /* PlayerView.m in Sources */,
 				64F949CB1BA9A918002CFAFA /* CoreDataController.m in Sources */,
+				6AFC6C831BB9C0D400F11B3A /* PlayButton.m in Sources */,
+				6A02CDF11BB5C515005519AA /* PlaylistsManager.m in Sources */,
 				64F949E61BA9BA52002CFAFA /* PlayerVC.m in Sources */,
 				64772B511BB2D79A00E4D4AB /* AnimatableShapeLayer.m in Sources */,
-				64772B4B1BB191B700E4D4AB /* MenuButton.m in Sources */,
+				6A02CDEA1BB5B917005519AA /* AFURLResponseSerialization.m in Sources */,
 				64F949BA1BA9A851002CFAFA /* GetYT.xcdatamodeld in Sources */,
+				6A02CDEE1BB5C175005519AA /* PlaylistsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
