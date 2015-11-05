@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-@class PlayButton;
+@class PlayButton, SongsPreviewView;
 
 typedef NS_OPTIONS(NSInteger, PlayerViewState) {
     PlayerViewState_normal,
@@ -21,6 +21,8 @@ typedef NS_OPTIONS(NSInteger, PlayerViewState) {
 @property (nonatomic, strong, readonly) UIButton *nextButton;
 @property (nonatomic, strong, readonly) UIButton *maximizeButton;
 @property (nonatomic, strong, readonly) UISlider *songPositionSlider;
+@property (nonatomic, strong, readonly) UILabel *songPositionLabel;
+@property (nonatomic, strong, readonly) SongsPreviewView *songsPreviewView;
 @property (nonatomic) PlayerViewState state;
 
 @end

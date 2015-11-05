@@ -1,14 +1,14 @@
 //
-//  AnimatableShapeLayer.m
+//  AnimatableTextLayer.m
 //  GetYT
 //
-//  Created by Mihai Dragnea on 9/23/15.
+//  Created by Mihai Dragnea on 11/5/15.
 //  Copyright © 2015 Dragnea Mihai. All rights reserved.
 //
 
-#import "AnimatableShapeLayer.h"
+#import "AnimatableTextLayer.h"
 
-@implementation AnimatableShapeLayer
+@implementation AnimatableTextLayer
 
 - (id<CAAction>)actionForKey:(NSString *)event {
     if ([self.animatableKeys containsObject:event]) {
@@ -22,6 +22,7 @@
     CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:key];
     animation.fromValue = [self.presentationLayer valueForKey:key];
     animation.duration = [CATransaction animationDuration];
+    animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
     return animation;
 }
 

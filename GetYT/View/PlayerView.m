@@ -8,9 +8,10 @@
 
 #import "PlayerView.h"
 #import "PlayButton.h"
+#import "SongsPreviewView.h"
 #import "GYTTheme.h"
 
-@interface PlayerView ()
+@interface PlayerView ()<SongsPreviewViewDataSource>
 @property (nonatomic, strong, readonly) NSLayoutConstraint *playButtonAlignXConstraint;
 @property (nonatomic, strong, readonly) NSLayoutConstraint *playButtonSizeConstraint;
 @property (nonatomic, strong, readonly) NSLayoutConstraint *prevButtonLeftConstraint;
@@ -19,6 +20,9 @@
 @property (nonatomic, strong, readonly) NSLayoutConstraint *layoutBottomConstraint;
 @property (nonatomic, strong, readonly) NSLayoutConstraint *songSliderLeftConstraint;
 @property (nonatomic, strong, readonly) NSLayoutConstraint *songSliderBottomConstraint;
+@property (nonatomic, strong, readonly) NSLayoutConstraint *songsPreviewBottomConstraint;
+@property (nonatomic, strong, readonly) NSLayoutConstraint *songsPreviewLeftConstraint;
+@property (nonatomic, strong, readonly) NSLayoutConstraint *songProgressLabelLeftConstraint;
 @end
 
 @implementation PlayerView
@@ -35,9 +39,7 @@
     self.backgroundColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
     self.translatesAutoresizingMaskIntoConstraints = NO;
     
-    /*
-     menu button
-     */
+#pragma mark - menu button
     
     _menuButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _menuButton.translatesAutoresizingMaskIntoConstraints = NO;
@@ -72,11 +74,9 @@
                                                                 multiplier:1.0
                                                                   constant:30.0]];
     
-    /*
-     play button
-     */
+#pragma mark - play button
     
-    _playButton = [PlayButton buttonWithType:UIButtonTypeCustom];
+    _playButton = [[PlayButton alloc] init];
     _playButton.translatesAutoresizingMaskIntoConstraints = NO;
     [_playButton addTarget:self action:@selector(playButtonTouched) forControlEvents:UIControlEventTouchUpInside];
     _playButton.paused = YES;
@@ -114,12 +114,11 @@
                                                           constant:0.0];
     [self.contentView addConstraint:_playButtonAlignXConstraint];
     
-    /*
-     previous button
-     */
+#pragma mark - previous button
     
     _prevButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _prevButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [_prevButton addTarget:self action:@selector(previousButtonTouched) forControlEvents:UIControlEventTouchUpInside];
     [_prevButton setImage:[UIImage imageNamed:@"control_prev"] forState:UIControlStateNormal];
     [self.contentView addSubview:_prevButton];
     [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:_prevButton
@@ -152,12 +151,11 @@
                                                               constant:70.0];
     [self.contentView addConstraint:_prevButtonLeftConstraint];
     
-    /*
-     next button
-     */
+#pragma mark - next button
     
     _nextButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _nextButton.translatesAutoresizingMaskIntoConstraints = NO;
+    [_nextButton addTarget:self action:@selector(nextButtonTouched) forControlEvents:UIControlEventTouchUpInside];
     [_nextButton setImage:[UIImage imageNamed:@"control_next"] forState:UIControlStateNormal];
     [self.contentView addSubview:_nextButton];
     [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:_nextButton
@@ -190,9 +188,7 @@
                                                                constant:120.0];
     [self.contentView addConstraint:_nextButtonRightConstraint];
     
-    /*
-     song position slider
-     */
+#pragma mark - song position slider
     
     _songPositionSlider = [[UISlider alloc] init];
     _songPositionSlider.translatesAutoresizingMaskIntoConstraints = NO;
@@ -231,9 +227,47 @@
                                                               constant:50.0];
     [self.contentView addConstraint:_songSliderLeftConstraint];
     
-    /*
-     maximize button
-     */
+#pragma mark - song position label
+    
+    _songPositionLabel = [[UILabel alloc] init];
+    _songPositionLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    _songPositionLabel.textAlignment = NSTextAlignmentCenter;
+    _songPositionLabel.textColor = [UIColor colorWithWhite:1.0 alpha:0.9];
+    _songPositionLabel.font = [UIFont fontWithName:@"AvenirNextCondensed-Medium" size:18.0];
+    _songPositionLabel.backgroundColor = [UIColor clearColor];
+    _songPositionLabel.text = @"01:34/03:47";
+    [self.contentView addSubview:_songPositionLabel];
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:_songPositionSlider
+                                                                 attribute:NSLayoutAttributeTop
+                                                                 relatedBy:NSLayoutRelationEqual
+                                                                    toItem:_songPositionLabel
+                                                                 attribute:NSLayoutAttributeBottom
+                                                                multiplier:1.0
+                                                                  constant:29.0]];
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:_songPositionLabel
+                                                                 attribute:NSLayoutAttributeWidth
+                                                                 relatedBy:NSLayoutRelationEqual
+                                                                    toItem:nil
+                                                                 attribute:NSLayoutAttributeNotAnAttribute
+                                                                multiplier:1.0
+                                                                  constant:120.0]];
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:_songPositionLabel
+                                                                 attribute:NSLayoutAttributeHeight
+                                                                 relatedBy:NSLayoutRelationEqual
+                                                                    toItem:nil
+                                                                 attribute:NSLayoutAttributeNotAnAttribute
+                                                                multiplier:1.0
+                                                                  constant:20]];
+    _songProgressLabelLeftConstraint = [NSLayoutConstraint constraintWithItem:_songPositionLabel
+                                                                    attribute:NSLayoutAttributeCenterX
+                                                                    relatedBy:NSLayoutRelationEqual
+                                                                       toItem:_playButton
+                                                                    attribute:NSLayoutAttributeCenterX
+                                                                   multiplier:1.0
+                                                                     constant:10.0];
+    [self.contentView addConstraint:_songProgressLabelLeftConstraint];
+    
+#pragma mark - maximize button
     
     _maximizeButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _maximizeButton.translatesAutoresizingMaskIntoConstraints = NO;
@@ -269,6 +303,42 @@
                                                                      multiplier:1.0
                                                                        constant:10.0];
     [self.contentView addConstraint:_horizontalAlignMaximizeConstraint];
+    
+#pragma mark - previous song view
+
+    _songsPreviewView = [[SongsPreviewView alloc] init];
+    _songsPreviewView.dataSource = self;
+    [self.contentView addSubview:_songsPreviewView];
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:_songsPreviewView
+                                                                 attribute:NSLayoutAttributeHeight
+                                                                 relatedBy:NSLayoutRelationEqual
+                                                                    toItem:nil
+                                                                 attribute:NSLayoutAttributeNotAnAttribute
+                                                                multiplier:1.0
+                                                                  constant:80.0]];
+    _songsPreviewLeftConstraint = [NSLayoutConstraint constraintWithItem:_songsPreviewView
+                                                               attribute:NSLayoutAttributeLeading
+                                                               relatedBy:NSLayoutRelationEqual
+                                                                  toItem:self.contentView
+                                                               attribute:NSLayoutAttributeLeading
+                                                              multiplier:1.0
+                                                                constant:0.0];
+    [self.contentView addConstraint:_songsPreviewLeftConstraint];
+    [self.contentView addConstraint:[NSLayoutConstraint constraintWithItem:_songsPreviewView
+                                                                 attribute:NSLayoutAttributeTrailing
+                                                                 relatedBy:NSLayoutRelationEqual
+                                                                    toItem:self.contentView
+                                                                 attribute:NSLayoutAttributeTrailing
+                                                                multiplier:1.0
+                                                                  constant:0.0]];
+    _songsPreviewBottomConstraint = [NSLayoutConstraint constraintWithItem:_playButton
+                                                                 attribute:NSLayoutAttributeTop
+                                                                 relatedBy:NSLayoutRelationEqual
+                                                                    toItem:_songsPreviewView
+                                                                 attribute:NSLayoutAttributeBottom
+                                                                multiplier:1.0
+                                                                  constant:70.0];
+    [self.contentView addConstraint:_songsPreviewBottomConstraint];
     
     self.state = PlayerViewState_normal;
 }
@@ -311,15 +381,19 @@
     
     switch (_state) {
         case PlayerViewState_fullscreen:
-            self.songSliderBottomConstraint.constant = -80.0;
+            self.songSliderBottomConstraint.constant = -100.0;
             self.songSliderLeftConstraint.constant = 30.0;
             self.playButtonAlignXConstraint.constant = 0.0;
             self.playButtonSizeConstraint.constant = 160.0;
-            self.prevButtonLeftConstraint.constant = -20.0;
-            self.nextButtonRightConstraint.constant = 20.0;
+            self.prevButtonLeftConstraint.constant = -40.0;
+            self.nextButtonRightConstraint.constant = 40.0;
             self.horizontalAlignMaximizeConstraint.constant = self.bounds.size.width - self.maximizeButton.bounds.size.width - 12.0;
             self.layoutBottomConstraint.constant = 0.0;
+            self.songsPreviewBottomConstraint.constant = 70.0;
+            self.songsPreviewLeftConstraint.constant = 0.0;
+            self.songProgressLabelLeftConstraint.constant = 0.0;
             self.playButton.fullscreen = YES;
+            self.songsPreviewView.fullscreen = YES;
             break;
             
         case PlayerViewState_normal:
@@ -327,11 +401,15 @@
             self.songSliderLeftConstraint.constant = 70.0;
             self.playButtonAlignXConstraint.constant = - (CGRectGetMidX(self.bounds) - 80.0);
             self.playButtonSizeConstraint.constant = 50.0;
-            self.prevButtonLeftConstraint.constant = 110.0;
-            self.nextButtonRightConstraint.constant = 90.0;
+            self.prevButtonLeftConstraint.constant = 90.0;
+            self.nextButtonRightConstraint.constant = 60.0;
             self.horizontalAlignMaximizeConstraint.constant = 12.0;
             self.layoutBottomConstraint.constant = -(CGRectGetHeight(self.superview.bounds) - 180.0);
+            self.songsPreviewBottomConstraint.constant = -2;
+            self.songsPreviewLeftConstraint.constant = 60.0;
+            self.songProgressLabelLeftConstraint.constant = 170.0;
             self.playButton.fullscreen = NO;
+            self.songsPreviewView.fullscreen = NO;
         default:
             break;
     }
@@ -362,6 +440,20 @@
 
 - (void)playButtonTouched {
     self.playButton.paused = !self.playButton.paused;
+}
+
+- (void)previousButtonTouched {
+    [self.songsPreviewView moveToPreviousSong];
+}
+
+- (void)nextButtonTouched {
+    [self.songsPreviewView moveToNextSong];
+}
+
+#pragma mark - SongsPreviewViewDataSource
+
+- (NSString *)songsPreviewView:(SongsPreviewView *)songsPreviewView position:(SongsPreviewPosition)position {
+    return [NSString stringWithFormat:@"title random %d", arc4random()];
 }
 
 @end

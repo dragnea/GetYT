@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PlayButton : UIButton
+@interface PlayButton : UIControl
+@property (nonatomic, strong) UIImage *image;
 @property (nonatomic) BOOL paused;
 @property (nonatomic) BOOL fullscreen;
 

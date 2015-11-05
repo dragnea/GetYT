@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		64448DE61BAAA22500837462 /* PlayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64448DE51BAAA22500837462 /* PlayerController.m */; };
 		64772B511BB2D79A00E4D4AB /* AnimatableShapeLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 64772B501BB2D79A00E4D4AB /* AnimatableShapeLayer.m */; };
+		64F1387A1BEB3AC30098E392 /* SongsPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F138791BEB3AC30098E392 /* SongsPreviewView.m */; };
+		64F1387D1BEB4BAA0098E392 /* AnimatableTextLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F1387C1BEB4BAA0098E392 /* AnimatableTextLayer.m */; };
+		64F138801BEB4BE30098E392 /* CATransactionAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F1387F1BEB4BE30098E392 /* CATransactionAdditions.m */; };
 		64F949AE1BA9A851002CFAFA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F949AD1BA9A851002CFAFA /* main.m */; };
 		64F949B11BA9A851002CFAFA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 64F949B01BA9A851002CFAFA /* AppDelegate.m */; };
 		64F949BA1BA9A851002CFAFA /* GetYT.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 64F949B81BA9A851002CFAFA /* GetYT.xcdatamodeld */; };
@@ -43,6 +46,12 @@
 		64448DE51BAAA22500837462 /* PlayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayerController.m; path = Controller/PlayerController.m; sourceTree = "<group>"; };
 		64772B4F1BB2D79A00E4D4AB /* AnimatableShapeLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnimatableShapeLayer.h; path = View/AnimatableShapeLayer.h; sourceTree = "<group>"; };
 		64772B501BB2D79A00E4D4AB /* AnimatableShapeLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnimatableShapeLayer.m; path = View/AnimatableShapeLayer.m; sourceTree = "<group>"; };
+		64F138781BEB3AC30098E392 /* SongsPreviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SongsPreviewView.h; path = View/SongsPreviewView.h; sourceTree = "<group>"; };
+		64F138791BEB3AC30098E392 /* SongsPreviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SongsPreviewView.m; path = View/SongsPreviewView.m; sourceTree = "<group>"; };
+		64F1387B1BEB4BAA0098E392 /* AnimatableTextLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AnimatableTextLayer.h; path = View/AnimatableTextLayer.h; sourceTree = "<group>"; };
+		64F1387C1BEB4BAA0098E392 /* AnimatableTextLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AnimatableTextLayer.m; path = View/AnimatableTextLayer.m; sourceTree = "<group>"; };
+		64F1387E1BEB4BE30098E392 /* CATransactionAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CATransactionAdditions.h; path = Libraries/CATransactionAdditions.h; sourceTree = "<group>"; };
+		64F1387F1BEB4BE30098E392 /* CATransactionAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CATransactionAdditions.m; path = Libraries/CATransactionAdditions.m; sourceTree = "<group>"; };
 		64F949A91BA9A851002CFAFA /* GetYT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GetYT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64F949AD1BA9A851002CFAFA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		64F949AF1BA9A851002CFAFA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -173,8 +182,12 @@
 			children = (
 				64772B4F1BB2D79A00E4D4AB /* AnimatableShapeLayer.h */,
 				64772B501BB2D79A00E4D4AB /* AnimatableShapeLayer.m */,
+				64F1387B1BEB4BAA0098E392 /* AnimatableTextLayer.h */,
+				64F1387C1BEB4BAA0098E392 /* AnimatableTextLayer.m */,
 				6A7515C41BE0246200E00A68 /* PlayButton.h */,
 				6A7515C51BE0246200E00A68 /* PlayButton.m */,
+				64F138781BEB3AC30098E392 /* SongsPreviewView.h */,
+				64F138791BEB3AC30098E392 /* SongsPreviewView.m */,
 				6A5BC0001BCAF914002D7228 /* PlayerView.h */,
 				6A5BC0011BCAF914002D7228 /* PlayerView.m */,
 			);
@@ -235,6 +248,8 @@
 		6A02CDCE1BB5B862005519AA /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				64F1387E1BEB4BE30098E392 /* CATransactionAdditions.h */,
+				64F1387F1BEB4BE30098E392 /* CATransactionAdditions.m */,
 				6A02CDCF1BB5B909005519AA /* AFNetworking */,
 			);
 			name = Libraries;
@@ -346,6 +361,7 @@
 				6A7515C61BE0246200E00A68 /* PlayButton.m in Sources */,
 				6A02CDCA1BB5B239005519AA /* Playlist+CoreDataProperties.m in Sources */,
 				6A02CDE41BB5B917005519AA /* AFHTTPRequestOperationManager.m in Sources */,
+				64F1387D1BEB4BAA0098E392 /* AnimatableTextLayer.m in Sources */,
 				6AFC6C891BB9C77800F11B3A /* GYTTheme.m in Sources */,
 				6A02CDE81BB5B917005519AA /* AFURLConnectionOperation.m in Sources */,
 				64448DE61BAAA22500837462 /* PlayerController.m in Sources */,
@@ -353,6 +369,7 @@
 				6A02CDE91BB5B917005519AA /* AFURLRequestSerialization.m in Sources */,
 				6A02CDC51BB5AE6B005519AA /* ManagedObject.m in Sources */,
 				6A02CDE51BB5B917005519AA /* AFHTTPSessionManager.m in Sources */,
+				64F138801BEB4BE30098E392 /* CATransactionAdditions.m in Sources */,
 				6A02CDE31BB5B917005519AA /* AFHTTPRequestOperation.m in Sources */,
 				64F949AE1BA9A851002CFAFA /* main.m in Sources */,
 				6A02CDE71BB5B917005519AA /* AFSecurityPolicy.m in Sources */,
@@ -360,6 +377,7 @@
 				6A02CDE61BB5B917005519AA /* AFNetworkReachabilityManager.m in Sources */,
 				6A02CDEB1BB5B917005519AA /* AFURLSessionManager.m in Sources */,
 				64F949DE1BA9B2CE002CFAFA /* Song+CoreDataProperties.m in Sources */,
+				64F1387A1BEB3AC30098E392 /* SongsPreviewView.m in Sources */,
 				6A5BC0021BCAF914002D7228 /* PlayerView.m in Sources */,
 				64F949CB1BA9A918002CFAFA /* CoreDataController.m in Sources */,
 				6A02CDF11BB5C515005519AA /* PlaylistsManager.m in Sources */,
